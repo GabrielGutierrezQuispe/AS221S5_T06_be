@@ -1,0 +1,16 @@
+server:
+    port: 8085
+spring:
+    datasource:
+        password: oNAgdYmHTawcTfLahbErCSnkjpXqOMrB
+        url: jdbc:postgresql://roundhouse.proxy.rlwy.net:16870/railway
+        username: postgres
+    jpa:
+        database: POSTGRESQL
+        generate-ddl: true
+        hibernate:
+            ddl-auto: create-drop
+        show-sql: true
+    sql:
+        init:
+            platform: postgres
