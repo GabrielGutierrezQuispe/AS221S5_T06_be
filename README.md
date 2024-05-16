@@ -107,24 +107,24 @@ _¡Y eso es todo! Ahora podemos comenzar a interactuar con la API del Servicio C
    
   _Accede al sitio web de Railway y [regístrate](https://railway.app/) para obtener una cuenta si aún no tienes una._
 
-3. **Creación de un proyecto**:
+2. **Creación de un proyecto**:
    
   _Después de iniciar sesión, crea un nuevo proyecto en Railway desde tu panel de control._
 
-5. **Agregar una base de datos PostgreSQL**:
+3. **Agregar una base de datos PostgreSQL**:
    
   _Una vez dentro del proyecto, haz clic en "Add New" y selecciona "Database" en el menú desplegable._
   _Elige PostgreSQL como el tipo de base de datos._
   _Configura las opciones según tus necesidades (tamaño de la base de datos, región, etc.) y confirma la creación._
   
-![railway](https://i.imgur.com/bz3xbY2.png)
+![railway](https://i.imgur.com/g78tY7Q.jpeg)
 
-7. **Obtención de las credenciales de la base de datos**:
+4. **Obtención de las credenciales de la base de datos**:
    
   _Una vez que la base de datos esté creada, haz clic en ella para ver los detalles._
   _Encuentra las credenciales de conexión, que generalmente incluyen el host, el puerto, el nombre de usuario y la contraseña._
 
-9. **Configuración en el proyecto**
+5. **Configuración en el proyecto**
     
 _Abre el archivo de configuración del proyecto application.yml y realiza la conexion a la base de datos._
 
@@ -132,6 +132,7 @@ _Abre el archivo de configuración del proyecto application.yml y realiza la con
 
 _Una vez que hayas completado estos pasos, tu aplicación estará configurada para conectarse a la base de datos PostgreSQL en la nube en Railway._
 
+![railway](https://i.imgur.com/tBT3KYN.jpeg)
 
 ## DOCKERIZACIÓN DEL PROYECTO 🐳🚀
 _Para dockerizar este proyecto y desplegarlo en contenedores Docker, sigue estos pasos:_
@@ -140,6 +141,7 @@ _Para dockerizar este proyecto y desplegarlo en contenedores Docker, sigue estos
 
    _Realizamos la respectiva configuracion de nuestro archivo_
 
+   ![configuracion](https://i.imgur.com/Gk5Dizg.jpeg)
    
 3. **Construir la imagen Docker**:
    
@@ -165,7 +167,7 @@ _Para dockerizar este proyecto y desplegarlo en contenedores Docker, sigue estos
    ```
    docker run -d -p 8085:8085 --name Speech_Test gabrielgutierrezquispe/service-speech
    ```
-   ![dockerhub](https://i.imgur.com/pz99Cwt.jpeg)
+   ![dockerhub](https://i.imgur.com/YHWX2Cf.jpeg)
 
 
 📚 Recurso: [Inicio rápido de la conversión de voz en texto: servicio de voz - Azure AI services | Microsoft Learn](https://learn.microsoft.com/es-es/azure/cognitive-services/speech-service/get-started)
