@@ -1,33 +1,26 @@
 package pe.edu.vallegrande.speech.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.vallegrande.speech.model.History;
-import pe.edu.vallegrande.speech.service.HistoryService;
-
-import java.util.List;
+import pe.edu.vallegrande.speech.service.impl.HistoryServiceImpl;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/speech")
 public class HistoryController {
 
-    private final HistoryService historyService;
+    private final HistoryServiceImpl historyServiceImpl;
 
     @GetMapping("/list")
-    public ResponseEntity<List<History>> listSpeech() {
-        return ResponseEntity.ok(historyService.listSpeech());
+    public Flux<History> listSpeech() {
+        return historyServiceImpl.listSpeech();
     }
 
     @PostMapping("/save")
-    public ResponseEntity<String> generateSpeech(@RequestBody String text) {
-        try{
-            return ResponseEntity.ok(historyService.generateSpeech(text));
-        } catch (RuntimeException e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
-        }
+    public Mono<String> generateSpeech(@RequestBody String text) {
+        return historyServiceImpl.generateSpeech(text);
     }
-
 }
