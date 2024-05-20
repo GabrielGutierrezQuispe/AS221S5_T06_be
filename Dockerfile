@@ -1,5 +1,5 @@
 FROM openjdk:17-jdk-slim
-LABEL authors="AS221S5_T06"
+LABEL authors="AS221S5_T06-Valery"
 RUN apt-get update && apt-get install -y \
     libasound2 \
     && rm -rf /var/lib/apt/lists/*
