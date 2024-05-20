@@ -6,19 +6,20 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class SpeechConfigBean {
+public class SpeechConfigBean
+{
 
     @Bean
-    public SpeechConfig speechConfig() {
+    public SpeechConfig speechConfig()
+    {
         String speechKey = "7d9d78756acf4e94975e1d944975e95e";
         String speechRegion = "eastus";
-        System.setProperty("java.io.tmpdir", "/tmp"); // Configura el directorio temporal
-        SpeechConfig config = SpeechConfig.fromSubscription(speechKey, speechRegion);
-        return config;
+        return SpeechConfig.fromSubscription(speechKey, speechRegion);
     }
 
     @Bean
-    public SpeechSynthesizer speechSynthesizer(SpeechConfig speechConfig) {
+    public SpeechSynthesizer speechSynthesizer(SpeechConfig speechConfig)
+    {
         return new SpeechSynthesizer(speechConfig);
     }
 }
