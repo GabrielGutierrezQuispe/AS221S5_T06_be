@@ -1,21 +1,20 @@
 package pe.edu.vallegrande.speech.model;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Table;
 
-@Entity
-@Table(name = "History")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@Table("History")
 public class History {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String text;
 }

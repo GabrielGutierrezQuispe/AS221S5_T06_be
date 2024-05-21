@@ -1,17 +1,10 @@
 package pe.edu.vallegrande.speech.service;
 
-import com.microsoft.cognitiveservices.speech.SpeechSynthesisResult;
 import pe.edu.vallegrande.speech.model.History;
-
-import java.util.List;
-import java.util.concurrent.ExecutionException;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 public interface HistoryService {
-
-    List<History> listSpeech();
-
-    String generateSpeech(String text);
-
-
-
+    Flux<History> listSpeech();
+    Mono<String> generateSpeech(String text);
 }
